@@ -10,7 +10,6 @@ jobs:
       - uses: actions/checkout@v3
       - id: foo
         run: ./script.js
-        shell: node '{0}'
       - name: Print output
         run: |
           echo "FOO: ${{ steps.foo.outputs.foo }}"
