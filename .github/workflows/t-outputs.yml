@@ -7,14 +7,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - id: foo
-        run: |
-          const fs = require("fs");
-          const os = require("os");
-          fs.appendFileSync(
-            process.env["GITHUB_OUTPUT"],
-            `foo=bar${os.EOL}`
-          );
+        run: ./script.js
         shell: node '{0}'
       - name: Print output
         run: |
