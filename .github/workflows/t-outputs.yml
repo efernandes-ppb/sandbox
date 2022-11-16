@@ -15,7 +15,7 @@ jobs:
             process.env["GITHUB_OUTPUT"],
             `foo=bar${os.EOL}`
           );
-        shell: node
+        shell: node '{0}'
       - name: Print output
         run: |
           echo "FOO: ${{ steps.foo.outputs.foo }}"
